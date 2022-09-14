@@ -1,0 +1,31 @@
+{
+  "format_version": 2,
+
+  "executors": [
+    {
+      "tasks": ["train", "submit_model"],
+      "executor": {
+        "path": "medmnist_trainer.medmnist_Trainer", 
+        "args": {
+          "lr": 0.0003,
+          "epochs": 5,
+          "data_flag": "octmnist"
+        }
+      }
+    },
+    {
+      "tasks": ["validate"],
+      "executor": {
+        "path": "medmnist_validator.medmnist_Validator",
+        "args": {
+        }
+      }
+    }
+  ],
+  "task_result_filters": [
+  ],
+  "task_data_filters": [
+  ],
+  "components": [
+  ]
+}
